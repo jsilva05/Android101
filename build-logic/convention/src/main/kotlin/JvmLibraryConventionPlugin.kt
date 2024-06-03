@@ -1,3 +1,4 @@
+import com.android101.buildlogic.configureDetekt
 import com.android101.buildlogic.configureKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -9,6 +10,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.jvm")
             }
 
+            configureDetekt()
             configureKotlin()
         }
     }

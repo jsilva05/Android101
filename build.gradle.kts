@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     alias(libs.plugins.jetbrains.kotlin.plugin.compose) apply false
+    alias(libs.plugins.detekt) apply false
 
     alias(libs.plugins.android101.application) apply false
     alias(libs.plugins.android101.android.library) apply false

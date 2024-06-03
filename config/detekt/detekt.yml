@@ -1,0 +1,64 @@
+complexity:
+  CyclomaticComplexMethod:
+    ignoreSimpleWhenEntries: true
+    ignoreSingleWhenExpression: true
+  LongMethod: # Disabled on tests - setup makes the functions bigger
+    excludes:
+      - "**/test/**"
+      - "**/androidTest/**"
+
+formatting:
+  ArgumentListWrapping: # Forces our maxLineLength
+    maxLineLength: 140
+  ContextReceiverMapping: # Forces our maxLineLength
+    maxLineLength: 140
+  FunctionReturnTypeSpacing: # Forces our maxLineLength
+    maxLineLength: 140
+  FunctionSignature: # Forces our maxLineLength
+    maxLineLength: 140
+  MaximumLineLength: # Disabled on tests - function names can be bigger then the limit
+    maxLineLength: 140
+    excludes:
+      - '**/test/**'
+  ParameterListWrapping: # Forces our maxLineLength
+    maxLineLength: 140
+  ParameterWrapping: # Forces our maxLineLength
+    maxLineLength: 140
+  PropertyWrapping: # Forces our maxLineLength
+    maxLineLength: 140
+  TrailingCommaOnCallSite:
+    active: true
+  TrailingCommaOnDeclarationSite:
+    active: true
+  Wrapping: # Forces our maxLineLength
+    maxLineLength: 140
+
+naming:
+  FunctionNaming: # https://detekt.dev/docs/introduction/compose#functionnaming-for-compose
+    ignoreAnnotated:
+      - 'Composable'
+  EnumNaming: # Force enum entries to be PascalCase
+    enumEntryPattern: '(?:[A-Z][a-z0-9]+)(?:[A-Z]+[a-z0-9]*)*'
+  PackageNaming: # Disallows camel case package names
+    packagePattern: '[a-z]+(\.[a-z][a-za-z0-9]*)*'
+  TopLevelPropertyNaming: # https://detekt.dev/docs/introduction/compose#toplevelpropertynaming-for-compose
+    constantPattern: '(?:[A-Z][a-z0-9]+)(?:[A-Z]+[a-z0-9]*)*'
+
+style:
+  MagicNumber: # https://detekt.dev/docs/introduction/compose#magicnumber-for-compose
+    active: false
+  MaxLineLength: # Overlaps with formatting.MaximumLineLength
+    active: false
+  ReturnCount: # Doesn't make sense
+    active: false
+  UnusedPrivateMember: # https://detekt.dev/docs/introduction/compose#unusedprivatemember-for-compose
+    ignoreAnnotated:
+      - 'Preview'
+      - 'PreviewWindowSizeClasses'
+
+Compose:
+  # https://github.com/mrmans0n/compose-rules/tree/main/rules/common/src/main/kotlin/io/nlopez/compose/rules
+  CompositionLocalAllowlist: # We don't want to declare all of our composition locals
+    active: false
+  ModifierComposable: # Using composed {} is no longer recommended: https://developer.android.com/jetpack/compose/custom-modifiers#create_a_custom_modifier_using_a_composable_modifier_factory
+    active: false #https://github.com/androidx/androidx/commit/ed53c47eb77241ceaa8bea40fb7ac6bbf81ef9d2
