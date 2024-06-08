@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.LibraryExtension
 import com.android101.buildlogic.configureAndroid
+import com.android101.buildlogic.configureAndroidLint
 import com.android101.buildlogic.configureCompose
 import com.android101.buildlogic.configureDetekt
 import com.android101.buildlogic.configureKotlin
@@ -21,6 +22,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             configureDetekt()
+            configureAndroidLint()
             configureKotlin()
 
             extensions.create("android101", AndroidLibrary::class)
