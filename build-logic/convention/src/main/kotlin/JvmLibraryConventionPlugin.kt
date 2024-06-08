@@ -1,3 +1,4 @@
+import com.android101.buildlogic.configureAndroidLint
 import com.android101.buildlogic.configureDetekt
 import com.android101.buildlogic.configureKotlin
 import org.gradle.api.Plugin
@@ -11,6 +12,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
             }
 
             configureDetekt()
+            configureAndroidLint()
             configureKotlin()
         }
     }

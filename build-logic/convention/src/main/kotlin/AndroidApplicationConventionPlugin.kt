@@ -1,6 +1,7 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.android101.buildlogic.AndroidVersions.TargetSdk
 import com.android101.buildlogic.configureAndroid
+import com.android101.buildlogic.configureAndroidLint
 import com.android101.buildlogic.configureCompose
 import com.android101.buildlogic.configureDetekt
 import com.android101.buildlogic.configureKotlin
@@ -23,6 +24,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
 
             configureDetekt()
+            configureAndroidLint()
             configureKotlin()
 
             extensions.create("android101", AndroidApplication::class)
