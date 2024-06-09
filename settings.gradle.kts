@@ -1,5 +1,4 @@
 @file:Suppress("UnstableApiUsage")
-
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -30,4 +29,12 @@ include(":backend:core")
 
 include(":core:moshi")
 
+include(":feature:list:impl")
+include(":feature:list:api")
+include(":feature:list:ui")
+
+include(":navigation")
+
+include(":ui:core")
 include(":ui:theme")
+include(":ui:shared")

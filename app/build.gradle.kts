@@ -29,7 +29,12 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity.compose)
+
     implementation(projects.backend.core)
     implementation(projects.core.moshi)
+
+    implementation(projects.feature.list.impl)
+
+    implementation(projects.navigation)
     implementation(projects.ui.theme)
 }
