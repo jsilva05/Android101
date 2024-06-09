@@ -4,6 +4,7 @@ plugins {
 
 android101 {
     compose()
+    hilt()
 }
 
 android {
@@ -28,5 +29,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity.compose)
+    implementation(projects.backend.core)
+    implementation(projects.core.moshi)
     implementation(projects.ui.theme)
 }

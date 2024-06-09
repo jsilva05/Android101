@@ -35,3 +35,8 @@ internal fun Project.configureAndroid(
         "coreLibraryDesugaring"(libs.findLibrary("coreLibraryDesugaring").get())
     }
 }
+
+internal val Project.hasAndroidPlugin: Boolean
+    get() = pluginManager.hasPlugin("com.android.application") ||
+        pluginManager.hasPlugin("com.android.library") ||
+        pluginManager.hasPlugin("com.android.test")
