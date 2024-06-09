@@ -7,10 +7,21 @@ espressoCore = "3.5.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 detekt = "1.23.6"
+ksp = "2.0.0-1.0.21"
+coroutines = "1.8.1"
+
+hilt = "2.51.1"
+moshi = "1.15.1"
+retrofit-bom = "2.11.0"
 
 [libraries]
 coreLibraryDesugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 androidx-activity-compose = "androidx.activity:activity-compose:1.9.0"
+
+# Coroutines
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 # Compose
 jetbrains-kotlin-compose-compiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
@@ -29,6 +40,20 @@ detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plug
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-compose = "io.nlopez.compose.rules:detekt:0.4.4"
 
+# Hilt
+hilt = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# Retrofit
+retrofit-bom = { module = "com.squareup.retrofit2:retrofit-bom", version.ref = "retrofit-bom" }
+retrofit = { module = "com.squareup.retrofit2:retrofit" }
+retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi" }
+
+# Moshi
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-adapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
 # Testing
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
@@ -44,6 +69,8 @@ jetbrains-kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", 
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # Convention Plugins
 android101-application = { id = "com.android101.application", version = "unspecified" }

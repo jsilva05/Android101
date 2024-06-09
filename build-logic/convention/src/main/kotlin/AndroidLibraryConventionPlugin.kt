@@ -3,7 +3,9 @@ import com.android101.buildlogic.configureAndroid
 import com.android101.buildlogic.configureAndroidLint
 import com.android101.buildlogic.configureCompose
 import com.android101.buildlogic.configureDetekt
+import com.android101.buildlogic.configureHilt
 import com.android101.buildlogic.configureKotlin
+import com.android101.buildlogic.configureMoshi
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -39,5 +41,18 @@ abstract class AndroidLibrary(
         extensions.configure<LibraryExtension> {
             configureCompose(this)
         }
+    }
+
+    /** Enable Hilt on this module, and add libraries. */
+    fun hilt() = with(project) {
+        configureHilt()
+    }
+
+    /** Enable Moshi on this module, and add libraries. */
+    fun moshi(
+        codegen: Boolean = false,
+        testsCodegen: Boolean = false,
+    ) = with(project) {
+        configureMoshi(codegen, testsCodegen)
     }
 }
