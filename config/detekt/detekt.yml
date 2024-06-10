@@ -54,7 +54,7 @@ style:
   UnusedPrivateMember: # https://detekt.dev/docs/introduction/compose#unusedprivatemember-for-compose
     ignoreAnnotated:
       - 'Preview'
-      - 'PreviewWindowSizeClasses'
+      - 'PreviewScreenSizes'
 
 Compose:
   # https://github.com/mrmans0n/compose-rules/tree/main/rules/common/src/main/kotlin/io/nlopez/compose/rules
