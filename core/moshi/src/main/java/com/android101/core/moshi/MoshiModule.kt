@@ -1,5 +1,6 @@
 package com.android101.core.moshi
 
+import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -12,6 +13,10 @@ import javax.inject.Singleton
 internal object MoshiModule {
     @Provides
     @Singleton
-    fun provideMoshi(): Moshi =
-        Moshi.Builder().build()
+    fun provideMoshi(
+        factories: Set<@JvmSuppressWildcards JsonAdapter.Factory>,
+    ): Moshi =
+        Moshi.Builder()
+            .apply { factories.forEach { add(it) } }
+            .build()
 }

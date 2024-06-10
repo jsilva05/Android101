@@ -8,6 +8,7 @@ android101 {
 }
 
 dependencies {
+    implementation(libs.eithernet.retrofit)
     implementation(platform(libs.retrofit.bom))
     implementation(libs.retrofit)
     implementation(libs.retrofit.moshi)

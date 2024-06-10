@@ -34,6 +34,7 @@ internal fun Project.configureCompose (
         "implementation"(libs.findLibrary("androidx.compose.foundation").get())
         "implementation"(libs.findLibrary("androidx.compose.material3").get())
         "implementation"(libs.findLibrary("androidx.compose.viewmodel").get())
+        "implementation"(libs.findLibrary("androidx.hilt.navigation.compose").get())
 
         "implementation"(libs.findLibrary("androidx.compose.ui.tooling").get())
         "debugImplementation"(libs.findLibrary("androidx.compose.ui.tooling.preview").get())

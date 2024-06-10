@@ -6,27 +6,40 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import kotlinx.coroutines.delay
+import app.cash.quiver.Absent
+import app.cash.quiver.Outcome
+import com.android101.list.GetMusicList
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @Composable
-fun listScreenPresenter(events: Flow<ListEvent>): ListModel {
-    var musics: List<MusicUiModel> by remember { mutableStateOf(emptyList()) }
+fun listScreenPresenter(
+    events: Flow<ListEvent>,
+    getMusicList: GetMusicList,
+): ListModel {
+    var musics: Outcome<GetMusicList.Error, List<TrackUiModel>> by remember { mutableStateOf(Absent) }
 
     LaunchedEffect(Unit) {
-        delay(5000L)
-        musics = listOf(
-            MusicUiModel("1", "This is the time"),
-            MusicUiModel("2", "Now or never"),
-            MusicUiModel("3", "Big bass knuckles"),
-        )
+        launch(Dispatchers.Default) {
+            getMusicList().collectLatest { outcome ->
+                // If we already have data, we want to ignore errors afterwards
+                if (musics.isPresent() && (outcome.isFailure() || outcome.isAbsent())) {
+                    return@collectLatest
+                }
+
+                musics = outcome.map { trackList ->
+                    trackList.map { it.toUiModel() }
+                }
+            }
+        }
     }
 
     UiEvents(events)
 
     return ListModel(
-        loading = musics.isEmpty(),
-        musics = musics,
+        tracks = musics,
     )
 }
 
