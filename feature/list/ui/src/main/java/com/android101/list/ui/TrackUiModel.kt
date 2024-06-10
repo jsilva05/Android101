@@ -1,6 +1,6 @@
 package com.android101.list.ui
 
-data class MusicUiModel(
+data class TrackUiModel(
     val id: String,
-    val title: String,
+    val name: String,
 )

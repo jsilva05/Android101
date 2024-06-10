@@ -26,15 +26,20 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 
 include(":backend:core")
+include(":backend:spotify")
 
+include(":core:impl")
 include(":core:moshi")
 
-include(":feature:list:impl")
 include(":feature:list:api")
+include(":feature:list:db")
+include(":feature:list:impl")
 include(":feature:list:ui")
 
 include(":navigation")
 
+include(":persistence:database")
+
 include(":ui:core")
-include(":ui:theme")
 include(":ui:shared")
+include(":ui:theme")

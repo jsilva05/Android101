@@ -1,5 +1,7 @@
 package com.android101.backend.core
 
+import com.slack.eithernet.integration.retrofit.ApiResultCallAdapterFactory
+import com.slack.eithernet.integration.retrofit.ApiResultConverterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -18,6 +20,8 @@ object RetrofitModule {
         moshi: Moshi,
     ): Retrofit = Retrofit.Builder()
         .baseUrl("https://api.spotify.com/v1/")
+        .addConverterFactory(ApiResultConverterFactory)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addCallAdapterFactory(ApiResultCallAdapterFactory)
         .build()
 }

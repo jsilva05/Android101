@@ -12,6 +12,8 @@ android101 {
 }
 
 dependencies {
+    implementation(projects.feature.list.api)
+
     implementation(projects.ui.core)
     implementation(projects.ui.shared)
 }

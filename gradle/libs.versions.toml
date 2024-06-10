@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.1"
+agp = "8.4.2"
 kotlin = "2.0.0"
 junit = "1.1.5"
 junitVersion = "4.13.2"
@@ -13,10 +13,14 @@ coroutines = "1.8.1"
 hilt = "2.51.1"
 moshi = "1.15.1"
 retrofit-bom = "2.11.0"
+eithernet = "2.0.0-alpha01"
 
 [libraries]
 coreLibraryDesugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 androidx-activity-compose = "androidx.activity:activity-compose:1.9.0"
+
+# Quiver
+quiver = "app.cash.quiver:lib:0.5.4"
 
 # Coroutines
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -33,6 +37,7 @@ androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
 androidx-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose" }
 androidx-compose-navigation = "androidx.navigation:navigation-compose:2.8.0-beta02"
+androidx-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.2.0"
 
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -48,6 +53,10 @@ hilt = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 
+# Eithernet
+eithernet = { module = "com.slack.eithernet:eithernet", version.ref = "eithernet" }
+eithernet-retrofit = { module = "com.slack.eithernet:eithernet-integration-retrofit", version.ref = "eithernet" }
+
 # Retrofit
 retrofit-bom = { module = "com.squareup.retrofit2:retrofit-bom", version.ref = "retrofit-bom" }
 retrofit = { module = "com.squareup.retrofit2:retrofit" }
@@ -58,8 +67,11 @@ moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-adapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
-#Molecule
+# Molecule
 molecule = "app.cash.molecule:molecule-runtime:2.0.0"
+
+# Store
+store = "org.mobilenativefoundation.store:store5:5.1.0-alpha02"
 
 # Testing
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }

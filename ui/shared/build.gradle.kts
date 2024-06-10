@@ -9,3 +9,7 @@ android {
 android101 {
     compose()
 }
+
+dependencies {
+    implementation(libs.quiver)
+}
