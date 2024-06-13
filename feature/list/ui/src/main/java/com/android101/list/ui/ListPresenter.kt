@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import app.cash.quiver.Absent
 import app.cash.quiver.Outcome
-import com.android101.list.GetMusicList
+import com.android101.list.GetTopTracks
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
@@ -17,13 +17,13 @@ import kotlinx.coroutines.launch
 @Composable
 fun listScreenPresenter(
     events: Flow<ListEvent>,
-    getMusicList: GetMusicList,
+    getTopTracks: GetTopTracks,
 ): ListModel {
-    var musics: Outcome<GetMusicList.Error, List<TrackUiModel>> by remember { mutableStateOf(Absent) }
+    var musics: Outcome<GetTopTracks.Error, List<TrackUiModel>> by remember { mutableStateOf(Absent) }
 
     LaunchedEffect(Unit) {
         launch(Dispatchers.Default) {
-            getMusicList().collectLatest { outcome ->
+            getTopTracks().collectLatest { outcome ->
                 // If we already have data, we want to ignore errors afterwards
                 if (musics.isPresent() && (outcome.isFailure() || outcome.isAbsent())) {
                     return@collectLatest

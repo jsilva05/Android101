@@ -6,6 +6,7 @@ import com.android101.buildlogic.configureCompose
 import com.android101.buildlogic.configureDetekt
 import com.android101.buildlogic.configureHilt
 import com.android101.buildlogic.configureKotlin
+import com.android101.buildlogic.configureLogger
 import com.android101.buildlogic.configureMoshi
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -28,6 +29,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             configureDetekt()
             configureAndroidLint()
             configureKotlin()
+            configureLogger()
 
             extensions.create("android101", AndroidApplication::class)
         }

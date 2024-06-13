@@ -5,6 +5,11 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class GetPlaylistResponse(
+    @Json(name = "tracks") val tracks: PlaylistDto,
+)
+
+@JsonClass(generateAdapter = true)
+data class PlaylistDto(
     @Json(name = "href") val href: String,
     @Json(name = "limit") val limit: Int,
     @Json(name = "next") val next: String?,

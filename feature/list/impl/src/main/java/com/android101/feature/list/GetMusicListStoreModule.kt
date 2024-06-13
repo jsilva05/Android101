@@ -2,6 +2,7 @@ package com.android101.feature.list
 
 import com.android101.backend.spotify.SpotifyNetworkDataSource
 import com.android101.core.impl.toFetcherResult
+import com.android101.feature.authentication.Token
 import com.android101.feature.list.db.ListDatabaseDataSource
 import com.android101.feature.list.mapper.toDomain
 import com.android101.feature.list.mapper.toEntity
@@ -25,11 +26,11 @@ internal object GetMusicListStoreModule {
     fun provideMusicListStore(
         spotifyNetworkDataSource: SpotifyNetworkDataSource,
         listDatabaseDataSource: ListDatabaseDataSource,
-    ): Store<Unit, List<Track>> {
+    ): Store<Token, List<Track>> {
         return StoreBuilder.from(
-            fetcher = Fetcher.ofResult { _: Unit ->
+            fetcher = Fetcher.ofResult { token: Token ->
                 spotifyNetworkDataSource
-                    .getTopMusics()
+                    .getTopMusics(token.value)
                     .toFetcherResult()
             },
             sourceOfTruth = SourceOfTruth.of(
@@ -39,7 +40,7 @@ internal object GetMusicListStoreModule {
                     }
                 },
                 writer = { _, response ->
-                    val tracks = response.items.map { it.track.toEntity() }
+                    val tracks = response.tracks.items.map { it.track.toEntity() }
                     listDatabaseDataSource.writeTrackList(tracks)
                 },
             ),

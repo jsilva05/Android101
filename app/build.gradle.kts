@@ -32,7 +32,9 @@ dependencies {
 
     implementation(projects.backend.core)
     implementation(projects.core.moshi)
+    implementation(projects.core.dateTime)
 
+    implementation(projects.feature.authentication.impl)
     implementation(projects.feature.list.impl)
 
     implementation(projects.navigation)

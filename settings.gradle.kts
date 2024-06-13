@@ -30,7 +30,10 @@ include(":backend:spotify")
 
 include(":core:impl")
 include(":core:moshi")
+include(":core:date-time")
 
+include(":feature:authentication:impl")
+include(":feature:authentication:api")
 include(":feature:list:api")
 include(":feature:list:db")
 include(":feature:list:impl")
