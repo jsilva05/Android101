@@ -4,4 +4,5 @@ plugins {
 
 android101 {
     hilt()
+    database("com.android101.feature.list.db")
 }

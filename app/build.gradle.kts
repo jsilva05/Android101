@@ -39,4 +39,5 @@ dependencies {
 
     implementation(projects.navigation)
     implementation(projects.ui.theme)
+    implementation(projects.persistence.database)
 }

@@ -4,6 +4,7 @@ import com.android101.buildlogic.configureHilt
 import com.android101.buildlogic.configureKotlin
 import com.android101.buildlogic.configureLogger
 import com.android101.buildlogic.configureMoshi
+import com.android101.buildlogic.configureSqlDelight
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
@@ -39,5 +40,11 @@ abstract class JvmLibrary(
         testsCodegen: Boolean = false,
     ) = with(project) {
         configureMoshi(codegen, testsCodegen)
+    }
+
+    fun database(
+        packageName: String,
+    ) = with(project) {
+        configureSqlDelight(packageName)
     }
 }

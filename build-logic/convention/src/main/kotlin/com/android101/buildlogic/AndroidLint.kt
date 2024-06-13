@@ -27,4 +27,5 @@ internal fun Project.configureAndroidLint() {
 
 private fun Lint.configure() {
     warningsAsErrors = true
+    disable += "AndroidGradlePluginVersion"
 }

@@ -1,0 +1,12 @@
+CREATE TABLE trackEntity (
+  id TEXT PRIMARY KEY NOT NULL,
+  name TEXT NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM trackEntity;
+
+insert:
+INSERT INTO trackEntity(id, name)
+VALUES (?, ?);
