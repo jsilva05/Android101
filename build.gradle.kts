@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.google.secrets) apply false
+    alias(libs.plugins.sql.delight) apply false
 
     alias(libs.plugins.android101.application) apply false
     alias(libs.plugins.android101.android.library) apply false

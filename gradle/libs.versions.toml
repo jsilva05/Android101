@@ -17,6 +17,8 @@ eithernet = "2.0.0-alpha01"
 
 google-secrets = "2.0.1"
 
+sql-delight = "2.0.2"
+
 [libraries]
 coreLibraryDesugaring = "com.android.tools:desugar_jdk_libs:2.0.4"
 androidx-activity-compose = "androidx.activity:activity-compose:1.9.0"
@@ -80,6 +82,11 @@ store = "org.mobilenativefoundation.store:store5:5.1.0-alpha02"
 # Kermit
 kermit = "co.touchlab:kermit:2.0.4"
 
+# SQL Delight
+sql-delight-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sql-delight" }
+sql-delight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sql-delight" }
+sql-delight-gradlePlugin = { module = "app.cash.sqldelight:gradle-plugin", version.ref = "sql-delight" }
+
 # Testing
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
@@ -98,6 +105,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "google-secrets" }
+sql-delight = { id = "app.cash.sqldelight", version.ref = "sql-delight" }
 
 # Convention Plugins
 android101-application = { id = "com.android101.application", version = "unspecified" }

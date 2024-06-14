@@ -15,6 +15,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.sql.delight.gradlePlugin)
     compileOnly(libs.jetbrains.kotlin.compose.compiler.gradlePlugin)
 }
 

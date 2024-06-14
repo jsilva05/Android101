@@ -19,7 +19,7 @@ annotation class AuthenticationTokenDataStore
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal class AuthenticationTokenDataStoreModule {
+internal object AuthenticationTokenDataStoreModule {
 
     @AuthenticationTokenDataStore
     @Singleton

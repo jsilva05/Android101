@@ -1,7 +1,7 @@
 package com.android101.feature.list.mapper
 
+import com.android101.TrackEntity
 import com.android101.backend.spotify.dto.TrackDto
-import com.android101.feature.list.db.entity.TrackEntity
 import com.android101.list.model.Track
 import com.android101.list.model.TrackId
 
